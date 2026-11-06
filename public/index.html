@@ -138,20 +138,7 @@
 			$.post("login","user="+$("#user").val()+"&pass="+$("#pass").val(),function (data) {
 				layer.msg(data.msg);
 				if (data.code==1){
-					layer.confirm(
-							'<div style="color: red"><p>1、V免签为个人开发者提供支付宝、微信的免签约收款解决方案，用于个人开发者捐赠列表的自动更新使用。</p>\n' +
-							'<p>2、V免签为开源免费产品，请勿二次出售。</p>\n' +
-							'<p>3、V免签仅供交流学习使用，请勿用于商业用途。</p>\n' +
-							'<p>4、请遵守相关法律法规，请勿用于非法用途。</p>'+
-							'<p>5、如您不同意以上说明，请勿使用本程序，否则造成的一切后果请自行承担。</p></div>', {
-								btn: ['我同意并愿意遵守','我不同意'], //按钮
-								title:'使用协议'
-							}, function(){
-								window.location.href = "aaa.html";
-
-							}, function(){
-								layer.msg("请您自行删除本程序！")
-							});
+					window.location.href = "aaa.html";
 				}
 			});
 

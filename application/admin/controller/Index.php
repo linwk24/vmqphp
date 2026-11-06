@@ -289,9 +289,9 @@ class Index
                 $url = $url."&".$p;
             }
 
-            $re = $this->getCurl($url);
+            $re = trim($this->getCurl($url));
 
-            if ($re=="success"){
+            if (strcasecmp($re,"success")===0){
                 if ($res['state']==0){
                     Db::name("tmp_price")
                         ->where("oid",$res['order_id'])

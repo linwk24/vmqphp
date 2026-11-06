@@ -154,6 +154,7 @@ class Log implements LoggerInterface
      * @param  string  $key  授权key
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     public function key($key)
     {
         $this->key = $key;

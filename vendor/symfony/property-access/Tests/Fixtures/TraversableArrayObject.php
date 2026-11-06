@@ -24,16 +24,19 @@ class TraversableArrayObject implements \ArrayAccess, \IteratorAggregate, \Count
         $this->array = $array ?: array();
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return array_key_exists($offset, $this->array);
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->array[$offset];
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (null === $offset) {
@@ -43,16 +46,19 @@ class TraversableArrayObject implements \ArrayAccess, \IteratorAggregate, \Count
         }
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->array[$offset]);
     }
 
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return new \ArrayIterator($this->array);
     }
 
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return \count($this->array);

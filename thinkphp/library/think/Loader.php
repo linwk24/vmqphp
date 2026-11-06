@@ -374,11 +374,11 @@ class Loader
         if ($type) {
             $name = preg_replace_callback('/_([a-zA-Z])/', function ($match) {
                 return strtoupper($match[1]);
-            }, $name);
+            }, (string) $name);
             return $ucfirst ? ucfirst($name) : lcfirst($name);
         }
 
-        return strtolower(trim(preg_replace("/[A-Z]/", "_\\0", $name), "_"));
+        return strtolower(trim(preg_replace("/[A-Z]/", "_\\0", (string) $name), "_"));
     }
 
     /**

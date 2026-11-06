@@ -18,6 +18,7 @@ function getCurl($url, $post = 0, $cookie = 0, $header = 0, $nobaody = 0)
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_TIMEOUT, 15);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
     $klsf[] = 'Accept:*/*';
     $klsf[] = 'Accept-Language:zh-cn';
     //$klsf[] = 'Content-Type:application/json';
